@@ -15,6 +15,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 const PORT = 4390
 app.listen(PORT, function () {
   console.log("Server listening on: http://localhost:%s", PORT)
+  require('child_process').exec('start http://localhost:' + PORT)
 })
 
 app.get('/', function (req, res) {
