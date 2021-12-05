@@ -22,8 +22,8 @@ app.get('/', function (req, res) {
   res.render('index')
 })
 
-app.post('/', function (req, res) {
-  renameFiles(req.body.inputPath, req.body.files, req.body.outputPath)
+app.post('/', async function (req, res) {
+  await renameFiles(req.body.inputPath, req.body.files, req.body.outputPath)
   res.send('Переименование прошло успешно')
 })
 
